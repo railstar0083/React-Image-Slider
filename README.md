@@ -15,5 +15,6 @@ npm start
   
 ```    
 npm install -g pushstate-server  
-pushstate-serever buildstart http://localhost:9000  
+pushstate-serever build  
+start http://localhost:9000  
 ```   
