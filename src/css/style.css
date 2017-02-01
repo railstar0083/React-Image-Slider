@@ -1,0 +1,160 @@
+/****
+
+Slider Project
+
+****/
+
+.slider-frame {
+	position: relative;
+}
+
+.image-gallery {
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.button-side {
+	height: 100%;
+	width: 32px;
+	position: absolute;
+	z-index: 5;
+	background: rgba(0,0,0,0.6);
+	opacity: 0;
+}
+
+.button-side:hover {
+	opacity: 1;
+}
+
+.button-side#left {
+	left: 0;
+	top:0;
+}
+
+.button-side#left button{
+	background: url("../images/leftarrow.png") center no-repeat;
+	height: 100%;
+	width: 32px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.button-side#right button{
+	background: url("../images/rightarrow.png") center no-repeat;
+	height: 100%;
+	width: 32px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.button-side#right {
+	right: 0;
+	top:0;
+}
+
+.visibleSlide {
+	z-index: 2;
+}
+
+.hideSlide {
+	opacity: 0;
+}
+
+.topSlide {
+	z-index: 3;
+}
+
+.animated {
+	position: absolute;
+}
+
+div[class^="slide-"]{
+    position: absolute;
+	overflow: hidden;
+}
+
+/*animation styles*/
+/*.slideOutLeft-enter {
+  -webkit-transition: all 2.5s;
+  transition: all 2.5s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.slideOutLeft-enter.slideOutLeft-enter-active {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.slideOutLeft-leave {
+  -webkit-transition: all 2.5s;
+  transition: all 2.5s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.slideOutLeft-leave.slideOutLeft-leave-active {
+	max-height: 0;
+	padding: 0 !important;
+	-webkit-transform: translateX(120%);
+            transform: translateX(120%);
+}*/
+
+/*Old styles*/
+
+.jasonSlider {
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	/*border: 1px solid red;*/	
+}
+
+.js-caption {
+	position: absolute;
+    color: #fff;
+    bottom: 0;
+	background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 10px;
+	margin: 0;
+}
+
+.js-info {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: url("../images/info.png");
+	width: 38px;
+	height: 38px;
+	margin: 0;
+	z-index:10;
+	cursor: pointer;
+	
+}
+
+#slideSelection {
+	width: 100%;
+	height: 17px;
+	position: absolute;
+	bottom: 0;
+	z-index: 9;
+}
+
+.slideSelectBTN {
+	height: 17px;
+	width: 17px;
+	margin-right: 10px;
+	cursor: pointer;
+	background: url("../images/select-button-OFF.png") center no-repeat;
+	display: inline-block;
+}
+
+.navModal {
+	position: absolute;
+	z-index: 4;
+	opacity: 0;
+	width: 32px;
+	cursor: pointer;
+}
