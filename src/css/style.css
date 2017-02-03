@@ -4,6 +4,12 @@ Slider Project
 
 ****/
 
+#jasonSlider img {
+	display: none;
+} #jasonSlider .image-gallery img {
+	display: block;
+}
+
 .slider-frame {
 	position: relative;
 }
@@ -74,6 +80,14 @@ Slider Project
 div[class^="slide-"]{
     position: absolute;
 	overflow: hidden;
+}
+
+/*Lock side nav on for mobile*/
+@media screen and (max-width: 768px) {
+	.button-side {
+		opacity: 1;
+	}
+	
 }
 
 /*animation styles*/

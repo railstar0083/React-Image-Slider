@@ -25,7 +25,7 @@ class ImageSlide extends React.Component {
 		return(
 			
 				<div className={className} id={id}>
-					<img src={details.url} height={details.height} width={details.width} alt={details.filename} />
+					<img src={details.src} height={details.height} width={details.width} alt={details.alt} />
 				</div>
 
 		)

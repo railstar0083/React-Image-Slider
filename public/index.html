@@ -4,9 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Slider Demo</title>
+	<style>
+		#jasonSlider img {
+			display: none;
+		}
+	</style>
   </head>
   <body>
-    <div id="jasonSlider">
+    <div id="jasonSlider" autoplay="false" delay="3" showsidenav="true" showbottomnav="false" images="../jasonSliderImages/" >
+	  <img src="../jasonSliderImages/cat.jpg" height="320" width="320" alt="Kitty!" />
+	  <img src="../jasonSliderImages/dog.jpg" height="320" width="320" alt="Puppy!" />
+	  <img src="../jasonSliderImages/bunny.jpg" height="320" width="320" alt="Bunny!" />
       <!-- This is where our React Slider app will go -->
     </div>
   </body>

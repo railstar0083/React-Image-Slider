@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageSlide from './ImageSlide';
 import SideButton from './SideButton';
+import * as Swipe from './Swipe';
 
 class Gallery extends React.Component {
 	
@@ -31,7 +32,16 @@ class Gallery extends React.Component {
 	}
 	
 	componentDidUpdate(props) {
-	
+		//Add event listener for swipe events
+		var gallery = document.getElementById("jasonSlider-gallery")
+		Swipe.init(gallery, callback => {
+			if (callback === "LEFT"){
+				this.handleLeftAnimation();
+			}else if(callback === "RIGHT"){
+				this.handleRightAnimation();
+			}
+		});
+		
 	  
 	}
 	
@@ -43,7 +53,7 @@ class Gallery extends React.Component {
 		//count slides, set variables
 		var slidecount = this.countSlides(), 
 			{height, width} = this.state,
-			{images} = this.props;
+			{images} = this.props.options;
 		//Parse out required slider height and width
 		console.log(images);
 		//iterate over images to find the largest and use those values
@@ -67,6 +77,18 @@ class Gallery extends React.Component {
 		
 	}
 	
+	componentWillUnmount() {
+		//Shut that listener off, but allow animations to finish.
+		var gallery = document.getElementById("jasonSlider-gallery")
+		Swipe.kill(gallery, callback => {
+			if (callback === "LEFT"){
+				this.handleLeftAnimation();
+			}else if(callback === "RIGHT"){
+				this.handleRightAnimation();
+			}
+		});
+		
+	}
 	
 	clearSelectors(visibleSlide, nextSlide) {
 		//Blow out all the animation classes and set the new topSlide(After the last animation has had time to run)
@@ -194,7 +216,7 @@ class Gallery extends React.Component {
 				<SideButton side="left" handleLeftAnimation={this.handleLeftAnimation} />
 				<SideButton side="right" handleRightAnimation={this.handleRightAnimation} />
 				{Object
-					.keys(this.props.images)
+					.keys(this.props.options.images)
 					.map((key, i) => 
 							<ImageSlide
 								key={key} 
@@ -204,7 +226,7 @@ class Gallery extends React.Component {
 								numberofslides={this.state.numberofslides}
 								currentslide={this.state.currentslide}
 								didanimate={this.state.didanimate}
-								details={this.props.images[key]}
+								details={this.props.options.images[key]}
 								id={"slide-" + (i + 1)} 
 								className={"animated "} 
 								ref="slide"

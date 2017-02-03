@@ -9,6 +9,14 @@ class SideButton extends React.Component {
 		
 	}
 	
+	componentDidUpdate() {
+		
+	}
+	
+	componentDidMount() {
+		
+	}
+	
 	checkSide(){
 		//Turn slider buttons off for a moment.  They are turned back on during animation cleanup.
 		var noclick = document.getElementById("left-button");
@@ -27,7 +35,7 @@ class SideButton extends React.Component {
 	render(){
 		return(
 			<div className="button-side" id={this.props.side}>
-				<button onClick={this.checkSide} id={this.props.side + "-button"}></button>
+				<button onClick={this.checkSide} onTouchStart={this.checkSide} id={this.props.side + "-button"}></button>
 			</div>
 		)
 	}
