@@ -38,7 +38,7 @@ I wanted to get away from having to use .JSON to update the images in the slider
 </body>
 ``` 
   
-That's all there is to it.  Add basic HTML <img> tags to the slider parent div and React does the rest.  It reads the images from top to bottom, order-wise. I also added this style to the <head> tag:  
+That's all there is to it.  Add basic HTML ```<img>``` tags to the slider parent div and React does the rest.  It reads the images from top to bottom, order-wise. I also added this style to the ```<head>``` tag:  
   
 ```
 	<style>
