@@ -70,7 +70,13 @@ class Slider extends React.Component {
 			delay: optionStates[1],
 			showsidenav: optionStates[2],
 			showbottomnav: optionStates[3]
-		});	
+		});
+		
+	}
+	
+	componentDidMount() {
+		//console.log("After set state")
+		//console.log(this.state.showbottomnav);
 	}
 	
 	findImages() {
@@ -88,25 +94,26 @@ class Slider extends React.Component {
 		let parentContainer = document.getElementById("jasonSlider");
 		//if the option exists (is not null), store it.  Otherwise, store the default value.
 		if(parentContainer.getAttribute("autoplay")){
-			var autoplay =  parentContainer.getAttribute("autoplay");
+			var autoplay = parentContainer.getAttribute("autoplay");
 		}else {
 			var autoplay = false;
 		}
 		if(parentContainer.getAttribute("delay")){
-			var delay =  parentContainer.getAttribute("delay");
+			var delay = parentContainer.getAttribute("delay");
 		}else {
 			var delay = 1;
 		}
 		if(parentContainer.getAttribute("showsidenav")){
-			var showsidenav =  parentContainer.getAttribute("showsidenav");
+			var showsidenav = parentContainer.getAttribute("showsidenav");
 		}else {
 			var showsidenav = true;
 		}
 		if(parentContainer.getAttribute("showbottomnav")){
-			var showbottomnav =  parentContainer.getAttribute("showbottomnav");
+			var showbottomnav = parentContainer.getAttribute("showbottomnav");
 		}else {
 			var showbottomnav = true;
 		}
+
 		//pass the options back as an array to be read into state.
 		var optionsArray = [];
 		optionsArray.push(autoplay, delay, showsidenav, showbottomnav);

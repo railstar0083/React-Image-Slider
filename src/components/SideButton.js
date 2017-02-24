@@ -18,18 +18,20 @@ class SideButton extends React.Component {
 	}
 	
 	checkSide(){
-		//Turn slider buttons off for a moment.  They are turned back on during animation cleanup.
-		var noclick = document.getElementById("left-button");
-			noclick.style.pointerEvents = "none";
-			noclick = document.getElementById("right-button");
-			noclick.style.pointerEvents = "none";
+		if(this.props.didanimate === true){
+			return;//prevents spam clicking of the animating buttons
+		}
+			
+		this.props.disableButtons();
 		//If the side prop is left, fire the left slide animation, 
 		//otherwise, fire the right slide animation
+		let click = true;
 		if (this.props.side === "left"){
-			this.props.handleLeftAnimation();
+			this.props.handleLeftAnimation(click);
 		} else if (this.props.side === "right") {
-			this.props.handleRightAnimation();
+			this.props.handleRightAnimation(click);
 		}
+		
 	}
 	
 	render(){
@@ -42,7 +44,8 @@ class SideButton extends React.Component {
 }
 
 SideButton.proptypes = {
-	params: React.PropTypes.object.isRequired
+	params: React.PropTypes.object.isRequired,
+	didanimate: React.PropTypes.bool.isRequired
 }
 
 export default SideButton;
