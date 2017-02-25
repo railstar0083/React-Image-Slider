@@ -49,3 +49,7 @@ That's all there is to it.  Add basic HTML ```<img>``` tags to the slider parent
 ```  
   
 This prevents the image flicker when the app loads.  This bandaid will be part of a package stylesheet at a later date, but for now, to stop that image flicker, use this.
+  
+  
+2/24/17  
+New functionality!  Indexed buttons have been added and can be toggles on and off by changing the data attribute "showbottomnav" on the slider's parent ```<div>``` element.  There are hooks for delay and auto play installed as well, but that particular function is not compolete.
